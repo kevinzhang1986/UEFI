@@ -701,14 +701,15 @@ BdsEntry (
     }
 
 
-    (VOID)AsciiPrint("\n\rAuto boot or not ?(Press 's' to Boot Menu)"); 
-    (VOID)AsciiPrint("\n\rNow wait for 2 seconds...\n");
-    
+    (VOID)AsciiPrint("\n\rAuto boot or not ?(Press 's' for Boot Menu)");
     ckeyValue = GET_CHAR_FROM_COM(2);
+    (VOID)AsciiPrint("\n\rNow wait for 200 seconds...\n");
 
-    if ( 0x73 != ckeyValue )   
+    ckeyValue = GET_CHAR_FROM_COM(200);
+
+    if ( 0x73 != ckeyValue )
     {
-        (VOID)AsciiPrint("\n\rNot Press 's', Start Auto Boot!\n"); 
+        (VOID)AsciiPrint("\n\rNot Press 's', Start Auto Boot!\n");
         Status = gBS->LocateProtocol (&gNANDDriverProtocolGuid, NULL, (VOID *) &nandDriver);
         if (EFI_ERROR(Status))
         {
