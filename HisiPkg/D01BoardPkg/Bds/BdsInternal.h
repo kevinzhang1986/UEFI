@@ -41,7 +41,7 @@
 #define TEXT_SRAM_BASE                  0xe00f0000
 #define MONITOR_SRAM_BASE               0xe00f8000
 #define KERNEL_DDR_BASE                 0x10008000
-#define FILESYSTEM_DDR_BASE             0x10d00000
+#define FILESYSTEM_DDR_BASE             0x20d00000
 
 #define ARM_BDS_OPTIONAL_DATA_SIGNATURE   SIGNATURE_32('a', 'b', 'o', 'd')
 
